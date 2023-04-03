@@ -8,13 +8,13 @@ const path = require('path');
 
 const logEvents = async (message) => {
   const dateTime = `${format(new Date(), 'yyyyMMdd\tHH:mm:ss')}`;
-  const logItem = `${dateTime}\t${uuid()}\t${message}`;
+  const logItem = `${dateTime}\t${uuid()}\t${message}\n`;
   console.log(logItem);
-  try {
+  try { // if folder doesnt exist it will make one 
       if (!fs.existsSync(path.join(__dirname, 'logs'))) {
         await fsPromises.mkdir(path.join(__dirname, 'logs'));
       }
-      //testing
+      // will create and append eventlog file, and will populate logItem const
       await fsPromises.appendFile(path.join(__dirname, 'logs', 'eventLog.txt'), logItem); 
   } catch (err) {
     console.log(err);
