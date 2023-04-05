@@ -1,4 +1,11 @@
-20230403	13:42:26	c41cf46a-b16c-44c9-ae9e-7213a6e539ab	/	GET
-20230403	13:42:26	b3eb65ce-5173-4d56-b847-1ecbb529ab28	/favicon.ico	GET
-20230403	13:50:23	5504d721-0fa5-4edf-9a73-e048fbb200dc	/	GET
-20230403	13:50:27	ae7a3334-7a7c-44a4-9e4d-38a646f3c373	/	GET
+20230405	16:21:21	cc9ea4ab-786c-414e-a645-864621f30b8f	GET	undefined	/new-page.html
+20230405	16:21:21	55cdc931-394e-465b-97e3-dbcf1bdee549	GET	undefined	/css/style.css
+20230405	16:21:21	6924f2e4-dc12-4893-9294-a62875874375	GET	undefined	/img/chill.jpg
+20230405	16:24:59	fa95d3fe-4857-4027-b7fc-89e286be6a0a	GET	undefined	/
+20230405	16:24:59	bd7b717c-c959-45d7-8468-667974b9a78d	GET	undefined	/css/style.css
+20230405	16:25:02	288c7ac1-48dd-44df-b2ef-54c455c2a73c	GET	undefined	/index
+20230405	16:25:21	73ca63b4-5a05-4e45-b6e0-a6942f2bd5bb	GET	undefined	/css/style.css
+20230405	16:32:20	247682dd-d390-49fe-8438-84129b7b3323	OPTIONS	https://www.google.com	/
+20230405	16:32:20	406110fb-8e98-474c-97c0-427aaa33eb1b	GET	https://www.google.com	/
+20230405	16:32:39	07c0c4c1-d641-4e49-816f-6d3044895a2b	OPTIONS	https://www.google.com	/
+20230405	16:32:39	4dafe675-0ab2-4b5d-a591-dd2b618c11dd	GET	https://www.google.com	/
