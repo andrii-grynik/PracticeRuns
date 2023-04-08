@@ -1,8 +1,12 @@
-const express = require("express");
+const express = require('express');
 const app = express();
-const path = require("path");
+const path = require('path');
 const cors = require('cors'); 
 const { logger } = require('./middleware/logEvents');
+const errorHandler = require('./middleware/errorHandler');
+
+
+//const { response } = require('express');
 const PORT = process.env.PORT || 3500;
 
 //custom middleware logger
@@ -13,7 +17,7 @@ app.use(logger);
 // const  whitelist = ['your site','more websites', 'and even more sites'];
 // const corsOptions = {
 //  origin: (origin, callback) => {
-//    if (whitelist.indexOf(origin) !== -1) {
+//    if (whitelist.indexOf(origin) !== -1 || !origin) {
         //callback(null, true)
     //} else {
         //callbackify(new Error('Not Allowed by CORS'));
@@ -49,9 +53,20 @@ app.get("/old-page(.html)?", (req, res) => {
   //to set route to new-page.html
   res.redirect(301, '/new-page.html'); // will default to 302(which is not what we need, permanent change is 301 status, so we need to specify that)
 });
-app.get("/*", (req, res) => {
+
+app.all("*", (req, res) => {
   //this will take care of routes out in as of /anything esle and will resut into 404 page, we chaned in 404 status for server report status
-  res.status(404).sendFile(path.join(__dirname, 'views', '404.html'));
+  res.status(404);
+  if (req.accepts('html')) {
+    res.sendFile(path.join(__dirname, 'views', '404.html'));
+  } else if (req.accepts('json')) {
+    res.json({ error: '404 Not Found' });
+  } else {
+    res.type('txt').send('404 Not Found');
+  }
+  
 });
+
+app.use(errorHandler);
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
