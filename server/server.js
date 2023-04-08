@@ -38,21 +38,30 @@ app.use(express.urlencoded({ extended: false}));
 app.use(express.json());
 
 //serve static files
-app.use(express.static(path.join(__dirname, '/public')));
+app.use('/', express.static(path.join(__dirname, '/public')));
+app.use('/subdir', express.static(path.join(__dirname, '/public')));
 
-app.get("^/$|/index(.html)?", (req, res) => {
-  //to set index.html as a root destiination. Either would work
-  //res.sendFile("./views/index.html", {root: __dirname});
-  res.sendFile(path.join(__dirname, 'views', 'index.html'));
-});
-app.get("/new-page(.html)?", (req, res) => {
-  //to set route to new-page.html
-  res.sendFile(path.join(__dirname, 'views', 'new-page.html'));
-});
-app.get("/old-page(.html)?", (req, res) => {
-  //to set route to new-page.html
-  res.redirect(301, '/new-page.html'); // will default to 302(which is not what we need, permanent change is 301 status, so we need to specify that)
-});
+
+// routes
+app.use('/', require('./routes/root'));
+app.use('/subdir', require('./routes/subdir'));
+app.use('/employees', require('./routes/api/employees'));
+
+
+// moved it to ./routes/root as of support function 
+// app.get("^/$|/index(.html)?", (req, res) => {
+//   //to set index.html as a root destiination. Either would work
+//   //res.sendFile("./views/index.html", {root: __dirname});
+//   res.sendFile(path.join(__dirname, 'views', 'index.html'));
+// });
+// app.get("/new-page(.html)?", (req, res) => {
+//   //to set route to new-page.html
+//   res.sendFile(path.join(__dirname, 'views', 'new-page.html'));
+// });
+// app.get("/old-page(.html)?", (req, res) => {
+//   //to set route to new-page.html
+//   res.redirect(301, '/new-page.html'); // will default to 302(which is not what we need, permanent change is 301 status, so we need to specify that)
+// });
 
 app.all("*", (req, res) => {
   //this will take care of routes out in as of /anything esle and will resut into 404 page, we chaned in 404 status for server report status
