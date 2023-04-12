@@ -1,7 +1,3 @@
-
-
-
-
 // we can create a whitelist for cors access. 
 // whitelist will prevent other websites to acces your backend, so make sure to whitelist your frontend in order to only limit it to one source
 const  whitelist = [

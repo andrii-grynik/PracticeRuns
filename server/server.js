@@ -2,10 +2,14 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const cors = require('cors'); 
-//const corsOptions = require('./config/corsOptions');  //uncomment for whitelisting
+const cookieParser = require('cookie-parser');
 const { logger } = require('./middleware/logEvents');
 const errorHandler = require('./middleware/errorHandler');
+const verifyJWT = require('./middleware/verifyJWT');
 
+
+
+//const corsOptions = require('./config/corsOptions');  //uncomment for whitelisting
 
 //const { response } = require('express');
 const PORT = process.env.PORT || 3500;
@@ -23,6 +27,9 @@ app.use(express.urlencoded({ extended: false}));
 //built in middleware for json
 app.use(express.json());
 
+//middleware for cookies
+app.use(cookieParser());
+
 //serve static files
 app.use('/', express.static(path.join(__dirname, '/public')));
 
@@ -30,9 +37,13 @@ app.use('/', express.static(path.join(__dirname, '/public')));
 
 // routes
 app.use('/', require('./routes/root'));
-app.use('/employees', require('./routes/api/employees'));
 app.use('/register', require('./routes/register'));
 app.use('/auth', require('./routes/auth'));
+app.use('/refresh', require('./routes/refresh'));
+app.use('/logout', require('./routes/logout'));
+app.use(verifyJWT);// to make sure its verified anything after this
+app.use('/employees', require('./routes/api/employees'));
+
 
 
 app.all("*", (req, res) => {

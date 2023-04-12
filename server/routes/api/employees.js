@@ -3,6 +3,7 @@ const router = express.Router();
 const path = require("path");
 const employeesController = require('../../controllers/employeesController');
 
+
 router
   .route("/")
   .get(employeesController.getAllEmployees)
@@ -15,3 +16,9 @@ router
   .get(employeesController.getEmployee);  
 
 module.exports = router;
+
+
+//you can protect individial route by adding verifyJWT to a route
+//.get(verifyJWT, employeesController.getAllEmployees)
+//will need to import this for specific route check
+//const verifyJWT = require('../../middleware/verifyJWT');
