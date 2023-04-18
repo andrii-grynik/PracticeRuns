@@ -120,3 +120,14 @@
 20230411	20:52:26	f0f62507-0c3c-4982-b31b-384973fb2864	POST	undefined	/auth
 20230411	20:53:10	57584249-8940-4482-bee5-4398b6af7b5d	GET	undefined	/logout
 20230411	20:53:27	793846ea-d2da-4e6f-8dc8-2e5302c1867c	GET	undefined	/refresh
+20230412	13:02:43	20451fde-344c-4bc6-bf36-8429517519b9	GET	undefined	/auth
+20230417	21:26:31	680da856-4b39-4e51-b0de-f38df8cc8afb	POST	undefined	/auth
+20230417	21:27:10	570d49e3-1307-46b9-aaa4-76f6e0274e10	POST	undefined	/employees
+20230417	21:27:38	696bbc0e-807a-497e-ad85-09aeaebbfcae	POST	undefined	/register
+20230417	21:30:05	a7c5a01e-47ec-427b-9b47-3ea0dced3ee8	POST	undefined	/employees
+20230417	21:30:14	a3df1161-583a-4e25-baa7-93fd88260095	POST	undefined	/auth
+20230417	21:30:26	2cbeae50-518f-48a2-ae1c-d7e48ed8895f	POST	undefined	/employees
+20230417	21:30:42	069ac499-8eea-4580-9053-5e1dfa8fbf1c	POST	undefined	/employees
+20230417	21:31:18	82b77636-ba72-4b4e-80a2-d21dc1a78955	DELETE	undefined	/employees
+20230417	21:37:10	4115da7b-938f-4f9d-9c74-f1ee43f1bfb5	GET	undefined	/auth
+20230417	21:37:10	84ab2c59-d3a7-40b8-a3ee-a651a08eeafe	GET	undefined	/favicon.ico
