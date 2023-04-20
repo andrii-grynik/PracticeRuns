@@ -1,2 +1,5 @@
 20230407	12:42:49	7ba3c267-5271-4867-bf41-5844063933a3	TypeError: Cannot read properties of undefined (reading 'next')
 20230407	12:44:22	1121d0e0-1daa-46a4-9df4-92e88f799a9e	TypeError: Cannot read properties of undefined (reading 'next')
+20230419	18:27:56	30876f12-7e6d-480f-89cb-e714a1b96d22	SyntaxError: Unexpected token e in JSON at position 0
+20230419	18:30:59	65c9f248-f937-4157-9d44-68eb614c967f	SyntaxError: Unexpected token e in JSON at position 0
+20230419	20:37:40	d9c11c85-2e34-4155-9b6f-2f3862326659	SyntaxError: Unexpected token 6 in JSON at position 0
