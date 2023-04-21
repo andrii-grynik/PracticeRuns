@@ -24,6 +24,8 @@ connectDB();
 //custom middleware logger
 app.use(logger);
 
+//Credential check before CORS
+//app.use(credentials);
 
 app.use(cors(/*corsOptions*/)); // uncomment to turn on whitelisting 
 
@@ -48,9 +50,10 @@ app.use('/register', require('./routes/register'));
 app.use('/auth', require('./routes/auth'));
 app.use('/refresh', require('./routes/refresh'));
 app.use('/logout', require('./routes/logout'));
+
 app.use(verifyJWT);// to make sure its verified anything after this
 app.use('/employees', require('./routes/api/employees'));
-
+app.use('/users', require('./routes/api/users'));
 
 
 app.all("*", (req, res) => {
