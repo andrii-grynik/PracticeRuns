@@ -1,12 +1,16 @@
 import React from 'react'
 
-const Header = () => {
+const Header = ({title}) => {
 
   return (
     <header>
-      <h1>List of Lists</h1>
+      <h1>{title}</h1>
     </header>
   )
+}
+//sets title if not provided in app.js
+Header.defaultProps = {
+  title: "Empty title"
 }
 
 export default Header
