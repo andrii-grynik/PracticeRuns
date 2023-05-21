@@ -11,7 +11,11 @@ const verifyJWT = require('./middleware/verifyJWT');
 const mongoose = require('mongoose');
 const connectDB = require('./config/dbConn');
 
-
+const corsOptions ={
+  origin:'http://localhost:3000', 
+  credentials:true,            //access-control-allow-credentials:true
+  optionSuccessStatus:200
+}
 
 //const corsOptions = require('./config/corsOptions');  //uncomment for whitelisting
 
@@ -27,7 +31,7 @@ app.use(logger);
 //Credential check before CORS
 //app.use(credentials);
 
-app.use(cors(/*corsOptions*/)); // uncomment to turn on whitelisting 
+app.use(cors(corsOptions)); // uncomment to turn on whitelisting 
 
 
 //to handle url encoded data. 
