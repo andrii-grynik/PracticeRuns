@@ -201,3 +201,9 @@
 20230516	08:40:30	504ad6a8-a8f6-4a4d-b433-ea009c584434	GET	undefined	/favicon.ico
 20230516	08:40:50	cf8b2784-ed7e-41e3-ade6-4ab82d4af9e4	OPTIONS	http://localhost:3000	/auth
 20230516	08:40:50	e22abc6d-66b6-49a4-a3be-45bb805780c7	POST	http://localhost:3000	/auth
+20230521	15:41:37	8908de3b-e804-4a79-9aea-1adc9d71832b	OPTIONS	http://localhost:3000	/auth
+20230521	15:41:37	034fba95-0288-4d33-a5aa-69e89364838f	POST	http://localhost:3000	/auth
+20230522	11:04:25	7f82eb85-6f01-4ffb-a76c-5fed08f8b77d	OPTIONS	http://localhost:3000	/register
+20230522	11:04:25	1bd21c27-8326-490e-9b70-95415d07b287	POST	http://localhost:3000	/register
+20230522	11:04:57	bca5f81a-19c7-4873-a9ab-fad805a4ff24	OPTIONS	http://localhost:3000	/auth
+20230522	11:04:57	645a89be-54e9-4831-8f8a-d23ea84df58b	POST	http://localhost:3000	/auth
