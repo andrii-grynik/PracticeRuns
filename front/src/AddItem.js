@@ -10,7 +10,7 @@ const AddItem = ({ newItem, setNewItem, handleSubmit }) => {
       <input
         autoFocus
         ref={inputRef}
-        id='addItme'
+        id='addItem'
         type='text'
         placeholder='Add Item' 
         required
